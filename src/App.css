@@ -1,38 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quote-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.quote-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.quote-card {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid #3498db;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.quote-text {
+  font-size: 1.4em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.quote-author {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #7f8c8d;
+  display: block;
+  text-align: right;
+}
+
+.loading,
+.error {
+  font-size: 1.1em;
+  color: #e74c3c;
+  margin: 20px 0;
+}
+
+.new-quote-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
+.new-quote-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.new-quote-button:active:not(:disabled) {
+  transform: translateY(0px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.new-quote-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Basic Responsive */
+@media (max-width: 768px) {
+  .quote-container {
+    padding: 30px 20px;
+    margin: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .quote-text {
+    font-size: 1.2em;
+  }
+
+  .quote-author {
+    font-size: 1em;
+  }
+
+  .new-quote-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
   }
 }
